@@ -16,11 +16,19 @@ public class OddSum {
                 System.out.print(" " + v);
             System.out.println();
         }
-        for (int i = 0; i < args.length; i++) {
-            listInt.add(Integer.parseInt(args[i]));
+
+        try {
+            for (int i = 0; i < args.length; i++) {
+                listInt.add(Integer.parseInt(args[i]));
+            }
+
+            res = sum(listInt);
+        }
+        catch (NumberFormatException e) {
+            System.err.println("Wrong format: " + e);
+            res = -1;
         }
 
-        res = sum(listInt);
         if (test) {
             return res;
         }
